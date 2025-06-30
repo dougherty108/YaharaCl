@@ -12,7 +12,7 @@ yahara_spc = read_csv('data/Yahara_Buoys_master_20250527.csv') |>
   mutate(year = year(date_time)#, 
          #depths = as.numeric(depths)
          ) |> 
-  filter(spc > 200)
+  filter(spc > 200 & spc < 1200)
 
 # plot spc
 ggplot(yahara_spc, aes(date_time, spc, color = depths)) + 

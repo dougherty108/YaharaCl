@@ -9,14 +9,14 @@ setwd("~/Documents/R-Repositories/YaharaCl")
 
 # load master file
 yahara_spc = read_csv('data/Yahara_Buoys_master_20250527.csv') |> 
-  mutate(year = year(date_time), 
-         depths = as.numeric(depths))
+  mutate(year = year(date_time)#, 
+         #depths = as.numeric(depths)
+         )
 
 # plot spc
 ggplot(yahara_spc, aes(date_time, spc, color = depths)) + 
   geom_path() + 
-  facet_wrap(vars(site)) + 
-  scale_color_gradientn(colors = ) + 
+  facet_wrap(vars(site)) +
   theme_bw()
 
 
